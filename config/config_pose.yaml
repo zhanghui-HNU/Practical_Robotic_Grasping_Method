@@ -1,0 +1,37 @@
+topic_camera: "/camera/color/image_raw"
+topic_publishing: "dope"
+frame_id: "/dope"
+
+# Comment any of these lines to prevent detection / pose estimation of that object
+weights: {  
+    #"soap":"VGG-19.pth"
+    #"soap": "VGG-16.pth"
+    #"soap":"FastNet-V2.pth"
+    "soap":"FastNet-V1.pth"
+}
+
+# Cuboid dimension in cm x,y,z
+dimensions: {
+    "soap": [9.3999996185302734, 5.8000001907348633, 3.2000000476837158]
+}
+
+draw_colors: {
+    "soap": [13, 255, 128] # green
+}
+
+# Camera intrinsics (Logitech C920)
+camera_settings: {
+    "name": "realsense-d435",
+    "width": 640,
+    "height": 480,
+    "fx": 611.028564453125,
+    "fy": 611.33837890625,
+    "cx": 321.5130615234375,
+    "cy": 240.90025329589844
+}
+
+# Config params for DOPE
+thresh_angle: 0.5
+thresh_map: 0.01
+sigma: 3
+thresh_points: 0.1
